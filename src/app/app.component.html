@@ -1,0 +1,39 @@
+<section class="p-4 section">
+  <div class="columns">
+    <div class="column is-6">
+      <label for="" class="label has-text-left">Grundgebühr</label>
+      <input type="number" class="input" value="4.95" />
+    </div>
+    <div class="column is-6">
+      <label for="" class="label has-text-left">Handelsplatz</label>
+      <input type="number" class="input" value="1.50" />
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="column is-4">
+      <label for="" class="label has-text-left">Provision Min</label>
+      <input type="number" class="input" value="9.95" />
+    </div>
+    <div class="column is-4">
+      <label for="" class="label has-text-left">Provision</label>
+      <input type="number" class="input" value="0.25" />
+    </div>
+    <div class="column is-4">
+      <label for="" class="label has-text-left">Provision Max</label>
+      <input type="number" class="input" value="69" />
+    </div>
+  </div>
+</section>
+<section class="px-4 section">
+  <div class="tabs">
+    <ul>
+      <li routerLinkActive="is-active" *ngFor="let tab of tabs">
+        <a [routerLink]="tab">{{tab|uppercase}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="box">
+    <router-outlet></router-outlet>
+  </div>
+</section>

@@ -1,0 +1,69 @@
+<div class="columns">
+  <div class="column has-text-left">
+    <label for="" class="label">Kaufpreis</label>
+    <input
+      type="number"
+      [class.is-danger]="sharePayedInput.errors"
+      class="input"
+      required
+      min="1"
+      [(ngModel)]="sharePayed"
+      #sharePayedInput="ngModel"
+    />
+  </div>
+  <div class="column has-text-left">
+    <label for="" class="label">Anzahl</label>
+    <input
+      type="number"
+      [class.is-danger]="shareCountInput.errors"
+      class="input"
+      required
+      min="1"
+      [(ngModel)]="shareCount"
+      #shareCountInput="ngModel"
+    />
+  </div>
+  <div class="column has-text-left">
+    <label for="" class="label">Preis / Stück</label>
+    <input
+      type="number"
+      required
+      min="1"
+      [class.is-danger]="pricePerShareInput.errors"
+      class="input"
+      [(ngModel)]="pricePerShare"
+      #pricePerShareInput="ngModel"
+    />
+  </div>
+</div>
+<div class="columns">
+  <div class="column is-4 has-text-left">
+    <label for="" class="label">Kaufpreis</label>
+    <h1>{{sharePayed|currency:'EUR'}}</h1>
+  </div>
+  <div class="column is-4 has-text-left">
+    <label for="" class="label">Verkaufswert</label>
+    <h1>{{sharePrice|currency:'EUR'}}</h1>
+  </div>
+  <div class="column is-4 has-text-left">
+    <label for="" class="label">Gebühren</label>
+    <h1>{{fee|currency:'EUR'}}</h1>
+  </div>
+</div>
+<div class="columns">
+  <div class="column is-4 has-text-left">
+    <label for="" class="label">Erlös ohne Steuern</label>
+    <h1
+      [class.has-text-danger]="earnings<0"
+      [class.has-text-success]="earnings>0"
+    >
+      {{earnings|currency:'EUR'}}
+    </h1>
+  </div>
+  <div class="column is-4 has-text-left">
+    <label for="" class="label">Rendite</label>
+    <h1 [class.has-text-danger]="yield<0" [class.has-text-success]="yield>0">
+      {{yield|percent:'1.2-2'}}
+    </h1>
+  </div>
+</div>
